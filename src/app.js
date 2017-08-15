@@ -11,18 +11,18 @@ class App extends PureComponent {
     this.state = {
       alreadyRead: [],
       reading: [],
-      wantRead: [],
+      wantRead: []
     }
   }
 
   componentWillMount () {
-    this.fetchAlreadyRead();
-    this.fetchReading();
-    this.fetchWantRead();
+    this.fetchAlreadyRead()
+    this.fetchReading()
+    this.fetchWantRead()
   }
 
   handleError = (error) => {
-    console.log(error);
+    console.log(error)
   }
 
   fetchAlreadyRead = () => {
@@ -34,13 +34,13 @@ class App extends PureComponent {
   fetchReading = () => {
     bookApi.fetchReading()
       .then(response => this.setState({ reading: response.data.response }))
-      .catch(error => this.handleError(error));
+      .catch(error => this.handleError(error))
   }
 
   fetchWantRead = () => {
     bookApi.fetchWantRead()
       .then(response => this.setState({ wantRead: response.data.response }))
-      .catch(error => this.handleError(error));
+      .catch(error => this.handleError(error))
   }
 
   renderBooks = (books = []) => (
@@ -63,7 +63,7 @@ class App extends PureComponent {
   )
 
   render () {
-    const { alreadyRead, reading, wantRead} = this.state;
+    const { alreadyRead, reading, wantRead } = this.state
 
     return (
       <div>
