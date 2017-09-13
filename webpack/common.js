@@ -21,7 +21,7 @@ module.exports = {
   },
 
   htmlPluginConfig: {
-    title: 'My app',
+    title: 'Skoob Bookshelf',
     template: join(paths.src, 'html', 'template.html')
   },
 
