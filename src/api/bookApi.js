@@ -9,13 +9,13 @@ const api = {
   fetchWantRead: () => axios.get(wantRead),
   fetchAlreadyRead: () => axios.get(alreadyRead),
   fetchReading: () => axios.get(reading),
-  fetchAll: () => {
-    return axios.all([
+  fetchAll: () => (
+    axios.all([
       axios.get(wantRead),
       axios.get(alreadyRead),
       axios.get(reading)
     ])
-  }
+  )
 }
 
 export default api
