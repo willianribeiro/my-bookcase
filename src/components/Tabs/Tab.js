@@ -1,24 +1,33 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
+import classnames from 'classnames'
 
-class Tab extends Component {
-  render() {
-    const {
-      title,
-      className,
-      children,
-    } = this.props
+const Tab = ({
+  title,
+  className,
+  children
+}) => {
+  const classNames = classnames(
+    className,
+    'c-tab'
+  )
 
-    return (
-      <div>
-        {children}
-      </div>
-    )
-  }
+  return (
+    <div className={classNames}>
+      content: {children}
+    </div>
+  )
 }
 
 Tab.propTypes = {
   title: PropTypes.string.isRequired,
+  className: PropTypes.string,
+  children: PropTypes.any
+}
+
+Tab.defaultProps = {
+  className: null,
+  children: null
 }
 
 export default Tab

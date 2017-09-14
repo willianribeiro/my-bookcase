@@ -7,43 +7,70 @@ class Tabs extends Component {
     this.state = {
       currentTabIndex: 0
     }
+
+    this.extractTitles = this.extractTitles.bind(this)
+    this.changeTabIndex = this.changeTabIndex.bind(this)
+    this.renderNavigator = this.renderNavigator.bind(this)
   }
 
-  componentWillMount() {
+  componentWillMount () {
     const { initialTab } = this.props
 
     if (initialTab) {
-      this.setState({ currentTabIndex: initialTab })
+      this.changeTabIndex(initialTab)
     }
   }
 
-  extractTitles = () => {
+  extractTitles () {
     const { children } = this.props
     return children.map((tab) => tab.props.title)
   }
 
-  render() {
-    const {
-      initialTab,
-      className,
-      children,
-    } = this.props
+  changeTabIndex (index) {
+    this.setState({
+      currentTabIndex: index
+    })
+  }
 
-    // console.log(this.extractTitles())
+  renderNavigator () {
+    const titles = this.extractTitles()
 
     return (
-      <div className="c-tabs">
-        <nav>
+      <nav className='c-tabs-navigator'>
+        {
+          titles.map((title, index) => (
+            <strong onClick={() => this.changeTabIndex(index)} key={index}>
+              {title} |
+            </strong>
+          ))
+        }
+      </nav>
+    )
+  }
 
-        </nav>
-        { children[this.state.currentTabIndex] }
+  render () {
+    const { children } = this.props
+    const { currentTabIndex } = this.state
+
+    return (
+      <div className='c-tabs'>
+        {this.renderNavigator()}
+        {children[currentTabIndex]}
       </div>
     )
   }
 }
 
 Tabs.propTypes = {
+  initialTab: PropTypes.number,
+  className: PropTypes.string,
+  children: PropTypes.any
+}
 
+Tabs.defaultProps = {
+  initialTab: 0,
+  className: null,
+  children: null
 }
 
 export default Tabs
