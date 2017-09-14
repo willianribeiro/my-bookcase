@@ -1,60 +1,42 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
+import TabNavigator from './TabNavigator'
+
 class Tabs extends Component {
   constructor () {
     super()
     this.state = {
       currentTabIndex: 0
     }
-
     this.extractTitles = this.extractTitles.bind(this)
     this.changeTabIndex = this.changeTabIndex.bind(this)
-    this.renderNavigator = this.renderNavigator.bind(this)
   }
 
   componentWillMount () {
-    const { initialTab } = this.props
-
-    if (initialTab) {
-      this.changeTabIndex(initialTab)
-    }
+    this.changeTabIndex(this.props.initialTab)
   }
 
   extractTitles () {
-    const { children } = this.props
-    return children.map((tab) => tab.props.title)
+    return this.props.children.map((tab) => tab.props.title)
   }
 
   changeTabIndex (index) {
+    if (index === undefined) return
+
     this.setState({
       currentTabIndex: index
     })
   }
 
-  renderNavigator () {
-    const titles = this.extractTitles()
-
-    return (
-      <nav className='c-tabs-navigator'>
-        {
-          titles.map((title, index) => (
-            <strong onClick={() => this.changeTabIndex(index)} key={index}>
-              {title} |
-            </strong>
-          ))
-        }
-      </nav>
-    )
-  }
-
   render () {
     const { children } = this.props
     const { currentTabIndex } = this.state
+    const tabs = this.extractTitles()
 
     return (
       <div className='c-tabs'>
-        {this.renderNavigator()}
+        <TabNavigator tabs={tabs} onTabClick={this.changeTabIndex} />
         {children[currentTabIndex]}
       </div>
     )
