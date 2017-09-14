@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import bookApi from '../api/bookApi'
+import MockBookApi from '../api/MockBookApi'
 
 class Home extends Component {
   constructor () {
@@ -18,19 +18,19 @@ class Home extends Component {
   }
 
   fetchAlreadyRead = () => {
-    bookApi.fetchAlreadyRead()
+    MockBookApi.fetchAlreadyRead()
       .then(response => this.setState({ alreadyRead: response.data.response }))
       .catch(error => this.handleError(error))
   }
 
   fetchReading = () => {
-    bookApi.fetchReading()
+    MockBookApi.fetchReading()
       .then(response => this.setState({ reading: response.data.response }))
       .catch(error => this.handleError(error))
   }
 
   fetchWantRead = () => {
-    bookApi.fetchWantRead()
+    MockBookApi.fetchWantRead()
       .then(response => this.setState({ wantRead: response.data.response }))
       .catch(error => this.handleError(error))
   }
