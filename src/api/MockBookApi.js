@@ -1,9 +1,8 @@
 import axios from 'axios'
 
-const wantRead = '../data/books_want_to_read.json'
-const alreadyRead = '../data/books_already_read.json'
-const reading = '../data/books_reading.json'
-
+const wantRead = '/mock_data/books_want_to_read.json'
+const alreadyRead = '/mock_data/books_already_read.json'
+const reading = '/mock_data/books_reading.json'
 
 const api = {
   fetchWantRead: () => axios.get(wantRead),
