@@ -1,5 +1,5 @@
 # Skoob Bookshelf
-**An online bookshelf to list your books registered at [Skoob](http://www.skoob.com.br).**
+**A virtual bookshelf to list your books registered at [Skoob](http://www.skoob.com.br).**
 
 Skoob platform enables You keep a log of books that: You have read, You are reading and you want to read. However, it is only available for whom is signed up to the website.
 
