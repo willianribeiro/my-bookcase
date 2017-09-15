@@ -2,7 +2,7 @@
 
 **Uma prateleira virtual para listar seus livros cadastrados no [Skoob](http://www.skoob.com.br).**
 
-A plataforma Skoob permite você manter um registro dos livros que você: já leu, está lendo e deseja ler. Porém, isso só fica disponível para quem é cadastrado na ferramenta.
+A plataforma Skoob permite você manter um registro dos livros que você: já leu, está lendo ou deseja ler. Porém, isso só fica disponível para quem é cadastrado na ferramenta.
 
 O Skoob Bookshelf permite que esses livros sejam compartilhados publicamente (-;
 

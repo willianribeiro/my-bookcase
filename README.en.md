@@ -1,7 +1,7 @@
 # Skoob Bookshelf
 **A virtual bookshelf to list your books registered at [Skoob](http://www.skoob.com.br).**
 
-Skoob platform enables You keep a log of books that: You have read, You are reading and you want to read. However, it is only available for whom is signed up to the website.
+Skoob platform enables You keep a log of books that: You have read, You are reading or you want to read. However, it is only available for whom is signed up to the website.
 
 Skoob Bookshelf enables share that books publicly (-;
 
