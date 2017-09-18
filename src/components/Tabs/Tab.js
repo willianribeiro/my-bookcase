@@ -12,11 +12,7 @@ const Tab = ({
     'c-tab'
   )
 
-  return (
-    <div className={classNames}>
-      content: {children}
-    </div>
-  )
+  return <div className={classNames}>{children}</div>
 }
 
 Tab.propTypes = {
