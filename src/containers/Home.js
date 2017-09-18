@@ -2,6 +2,7 @@ import React, {Component } from 'react'
 
 import MockBookApi from '../api/MockBookApi'
 import { Tabs, Tab } from 'components/Tabs'
+import BookCard from 'components/BookCard'
 
 class Home extends Component {
   constructor () {
@@ -51,11 +52,12 @@ class Home extends Component {
       // const link = book.edicao.url
 
       return (
-        <article key={index}>
-          <h3>{title}</h3>
-          <p>{author}</p>
-          <img src={cover} />
-        </article>
+        <BookCard
+          title={title}
+          author={author}
+          img={cover}
+          key={book.id}
+        />
       )
     })
   )
@@ -64,7 +66,7 @@ class Home extends Component {
     const { alreadyRead, reading, wantRead } = this.state
 
     return (
-      <Tabs>
+      <Tabs initialTab={1}>
         <Tab title='Already read'>
           {this.renderBooks(alreadyRead)}
         </Tab>
