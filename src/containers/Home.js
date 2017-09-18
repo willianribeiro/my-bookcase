@@ -42,7 +42,7 @@ class Home extends Component {
     console.log(error)
   }
 
-  renderBooks = (books = []) => (
+  buildBookCards = (books = []) => (
     books.map((book, index) => {
       const cover = book.edicao.capa_media
       const title = book.edicao.titulo
@@ -61,6 +61,11 @@ class Home extends Component {
       )
     })
   )
+
+  renderBooks = (books) => {
+    const shelf = this.buildBookCards(books)
+    return <div className="c-shelf"> { shelf }</div>
+  }
 
   render () {
     const { alreadyRead, reading, wantRead } = this.state
