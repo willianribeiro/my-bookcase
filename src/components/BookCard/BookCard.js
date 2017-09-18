@@ -7,7 +7,7 @@ const BookCard = ({
   img
 }) => {
   return (
-    <div>
+    <div className='c-book-card'>
       <div>{title}</div>
       <div>{author}</div>
       <img src={img} />

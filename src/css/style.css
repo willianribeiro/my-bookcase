@@ -71,3 +71,21 @@ body {
     width: 100%;
     background-color: #ff4081;
   }
+
+
+/* COMPONENT: BOOK-CARD */
+.c-book-card {
+  padding: 8px;
+}
+
+  .c-book-card + .c-book-card {
+    margin-left: 16px;
+    margin-bottom: 16px;
+  }
+
+
+/* COMPONENT: SHELF */
+.c-shelf {
+  display: flex;
+  flex-wrap: wrap;
+}
