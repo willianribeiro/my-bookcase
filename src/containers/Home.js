@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, {Component } from 'react'
 
 import MockBookApi from '../api/MockBookApi'
 import { Tabs, Tab } from 'components/Tabs'
@@ -66,10 +66,10 @@ class Home extends Component {
     return (
       <Tabs>
         <Tab title='Already read'>
-          { this.renderBooks(alreadyRead) }
+          {this.renderBooks(alreadyRead)}
         </Tab>
         <Tab title='Reading'>
-          { this.renderBooks(reading) }
+          {this.renderBooks(reading)}
         </Tab>
         <Tab title='Want to read'>
           {this.renderBooks(wantRead)}
