@@ -1,20 +1,29 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import classnames from 'classnames'
 
 const TabNavigator = ({
   tabs,
-  onTabClick
+  onTabClick,
+  currentTabIndex
 }) => (
   <nav className='c-tab-navigator'>
     {
-      tabs.map((tab, index) => (
-        <strong
-          key={index}
-          onClick={() => onTabClick(index)}
-        >
-          {tab}
-        </strong>
-      ))
+      tabs.map((tab, index) => {
+        const classNames = classnames(
+          'c-tab-navigator__item',
+          { 'c-tab-navigator__item--is-active': currentTabIndex === index }
+        )
+        return (
+          <div
+            key={index}
+            onClick={() => onTabClick(index)}
+            className={classNames}
+          >
+            {tab}
+          </div>
+        )
+      })
     }
   </nav>
 )

@@ -36,7 +36,11 @@ class Tabs extends Component {
 
     return (
       <div className='c-tabs'>
-        <TabNavigator tabs={tabs} onTabClick={this.changeTabIndex} />
+        <TabNavigator
+          tabs={tabs}
+          onTabClick={this.changeTabIndex}
+          currentTabIndex={currentTabIndex}
+        />
         {children[currentTabIndex]}
       </div>
     )
