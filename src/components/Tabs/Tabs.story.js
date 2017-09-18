@@ -3,7 +3,7 @@ import { storiesOf } from '@kadira/storybook'
 
 import { Tabs, Tab } from 'components/Tabs'
 
-storiesOf('Button', module)
+storiesOf('Tabs', module)
   .add('demo', () => (
     <Tabs initialTab={1}>
       <Tab title='Already read'>
