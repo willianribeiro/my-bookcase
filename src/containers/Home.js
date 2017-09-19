@@ -64,7 +64,7 @@ class Home extends Component {
 
   renderBooks = (books) => {
     const shelf = this.buildBookCards(books)
-    return <div className="c-shelf"> { shelf }</div>
+    return <div className='c-shelf'>{shelf}</div>
   }
 
   render () {
