@@ -8,9 +8,14 @@ const BookCard = ({
 }) => {
   return (
     <div className='c-book-card'>
-      <div>{title}</div>
-      <div>{author}</div>
-      <img src={img} />
+      <div className='c-book-card__cover' >
+        <img src={img} />
+      </div>
+
+      <div className='c-book-card__infos' >
+        <div className='c-book-card__title'>{title}</div>
+        <div className='c-book-card__author'>{author}</div>
+      </div>
     </div>
   )
 }
