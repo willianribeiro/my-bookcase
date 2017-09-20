@@ -21,7 +21,10 @@ const BookCard = ({
 }
 
 BookCard.propTypes = {
-  title: PropTypes.string,
+  title: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number
+  ]),
   author: PropTypes.string,
   img: PropTypes.string
 }
