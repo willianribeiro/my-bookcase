@@ -2,7 +2,6 @@ import React, {Component } from 'react'
 
 import MockBookApi from '../api/MockBookApi'
 import { Tabs, Tab } from 'components/Tabs'
-import BookCard from 'components/BookCard'
 import Bookshelf from 'components/Bookshelf'
 import AppHeader from 'components/AppHeader'
 
@@ -51,7 +50,7 @@ class Home extends Component {
       <div>
         <AppHeader title={'User\'s Bookshelf'} />
 
-        <div className="pg-home">
+        <div className='pg-home'>
           <Tabs initialTab={1} className='pg-custom-tabs'>
             <Tab title='Already read'>
               <Bookshelf books={alreadyRead} />
