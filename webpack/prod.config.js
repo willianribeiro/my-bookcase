@@ -74,6 +74,12 @@ module.exports = {
           fallback: common.cssLoader.use[0],
           use: common.cssLoader.use.slice(1)
         })
+      }),
+      Object.assign({}, common.scssLoader, {
+        use: ExtractTextPlugin.extract({
+          fallback: common.scssLoader.use[0],
+          use: common.scssLoader.use.slice(1)
+        })
       })
     ]
   },
