@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import classnames from 'classnames'
 
 import TabNavigator from './TabNavigator'
 
@@ -30,12 +31,16 @@ class Tabs extends Component {
   }
 
   render () {
-    const { children } = this.props
+    const { children, className } = this.props
     const { currentTabIndex } = this.state
     const tabs = this.extractTitles()
+    const classNames = classnames(
+      className,
+      'c-tabs'
+    )
 
     return (
-      <div className='c-tabs'>
+      <div className={classNames}>
         <TabNavigator
           tabs={tabs}
           onTabClick={this.changeTabIndex}
