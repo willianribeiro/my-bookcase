@@ -4,6 +4,7 @@ import MockBookApi from '../api/MockBookApi'
 import { Tabs, Tab } from 'components/Tabs'
 import BookCard from 'components/BookCard'
 import Bookshelf from 'components/Bookshelf'
+import AppHeader from 'components/AppHeader'
 
 class Home extends Component {
   constructor () {
@@ -47,17 +48,23 @@ class Home extends Component {
     const { alreadyRead, reading, wantRead } = this.state
 
     return (
-      <Tabs initialTab={1}>
-        <Tab title='Already read'>
-          <Bookshelf books={alreadyRead} />
-        </Tab>
-        <Tab title='Reading'>
-          <Bookshelf books={reading} />
-        </Tab>
-        <Tab title='Want to read'>
-          <Bookshelf books={wantRead} />
-        </Tab>
-      </Tabs>
+      <div>
+        <AppHeader title={'User\'s Bookshelf'} />
+
+        <div className="pg-home">
+          <Tabs initialTab={1} className='pg-custom-tabs'>
+            <Tab title='Already read'>
+              <Bookshelf books={alreadyRead} />
+            </Tab>
+            <Tab title='Reading'>
+              <Bookshelf books={reading} />
+            </Tab>
+            <Tab title='Want to read'>
+              <Bookshelf books={wantRead} />
+            </Tab>
+          </Tabs>
+        </div>
+      </div>
     )
   }
 }

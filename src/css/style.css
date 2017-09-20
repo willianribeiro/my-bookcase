@@ -166,3 +166,14 @@ body {
     font-size: 50px;
     text-align: center;
   }
+
+
+/* PAGE: HOME */
+.pg-home {
+
+}
+
+  .pg-home .pg-custom-tabs .c-tab-navigator__inner {
+    margin: 0 auto;
+    max-width: 1000px;
+  }
