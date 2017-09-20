@@ -59,7 +59,7 @@ body {
   }
 
   .c-tab-navigator__item:hover {
-    background-color: #3949a0;
+    color: #fff;
   }
 
   /*  COMPONENT: TAB-NAVIGATOR (STATES) */
