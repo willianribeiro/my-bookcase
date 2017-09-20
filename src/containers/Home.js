@@ -3,6 +3,7 @@ import React, {Component } from 'react'
 import MockBookApi from '../api/MockBookApi'
 import { Tabs, Tab } from 'components/Tabs'
 import BookCard from 'components/BookCard'
+import Bookshelf from 'components/Bookshelf'
 
 class Home extends Component {
   constructor () {
@@ -42,44 +43,19 @@ class Home extends Component {
     console.log(error)
   }
 
-  buildBookCards = (books = []) => (
-    books.map((book, index) => {
-      const cover = book.edicao.capa_media
-      const title = book.edicao.titulo
-      // const subtitle = book.edicao.subtitulo
-      const author = book.edicao.autor
-      // const publishingCompany = book.edicao.editora
-      // const link = book.edicao.url
-
-      return (
-        <BookCard
-          title={title}
-          author={author}
-          img={cover}
-          key={book.id}
-        />
-      )
-    })
-  )
-
-  renderBooks = (books) => {
-    const shelf = this.buildBookCards(books)
-    return <div className='c-shelf'>{shelf}</div>
-  }
-
   render () {
     const { alreadyRead, reading, wantRead } = this.state
 
     return (
       <Tabs initialTab={1}>
         <Tab title='Already read'>
-          {this.renderBooks(alreadyRead)}
+          <Bookshelf books={alreadyRead} />
         </Tab>
         <Tab title='Reading'>
-          {this.renderBooks(reading)}
+          <Bookshelf books={reading} />
         </Tab>
         <Tab title='Want to read'>
-          {this.renderBooks(wantRead)}
+          <Bookshelf books={wantRead} />
         </Tab>
       </Tabs>
     )
