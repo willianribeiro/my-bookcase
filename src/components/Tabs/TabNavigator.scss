@@ -1,0 +1,38 @@
+.c-tab-navigator {
+  background-color: #3f51b5;
+  color: #c5cae9;
+
+  .c-tab-navigator__inner {
+    display: flex;
+  }
+
+  .c-tab-navigator__item {
+    flex-grow: 1;
+    flex-basis: 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    line-height: 1.3;
+    text-align: center;
+    cursor: pointer;
+
+    // STATES
+    &:hover { color: #fff; }
+
+    &.c-tab-navigator__item--is-active {
+      color: #fff;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 3px;
+        width: 100%;
+        background-color: #ff4081;
+      }
+    }
+  }
+}

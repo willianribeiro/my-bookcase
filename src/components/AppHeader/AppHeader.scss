@@ -1,0 +1,14 @@
+.c-app-header {
+  height: 150px;
+  background-color: #3f51b5;
+  color: #fff;
+
+  .c-app-header__title {
+    padding: 32px;
+    max-width: 1000px;
+    margin: 0 auto;
+    font-size: 50px;
+    text-align: center;
+  }
+}
+

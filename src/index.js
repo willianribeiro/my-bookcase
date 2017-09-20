@@ -4,6 +4,7 @@ import React from 'react'
 import { render } from 'react-dom'
 import { AppContainer } from 'react-hot-loader'
 import App from './app'
+import './css/main.scss'
 
 const renderApp = (NextApp) => {
   render(
