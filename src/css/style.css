@@ -147,3 +147,19 @@ body {
       margin-right: auto;
     }
   }
+
+
+/* COMPONENT: APP-HEADER */
+.c-app-header {
+  height: 200px;
+  background-color: #3f51b5;
+  color: #fff;
+}
+
+  .c-app-header__title {
+    padding: 16px;
+    max-width: 1000px;
+    margin: 0 auto;
+    font-size: 50px;
+    text-align: center;
+  }
