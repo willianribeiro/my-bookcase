@@ -62,6 +62,12 @@ module.exports = {
     use: ['style-loader', 'css-loader']
   },
 
+  scssLoader: {
+    test: /\.scss$/,
+    include: paths.src,
+    use: ['style-loader', 'css-loader', 'sass-loader']
+  },
+
   fileLoader: {
     test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|txt)(\?.*)?$/,
     include: paths.src,

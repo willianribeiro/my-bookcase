@@ -33,6 +33,7 @@ module.exports = {
       common.standardPreLoader,
       common.jsLoader,
       common.cssLoader,
+      common.scssLoader,
       common.fileLoader,
       common.urlLoader
     ]
