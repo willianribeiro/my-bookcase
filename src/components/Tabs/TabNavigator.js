@@ -13,7 +13,7 @@ const TabNavigator = ({
         tabs.map((tab, index) => {
           const classNames = classnames(
             'c-tab-navigator__item',
-            { 'c-tab-navigator__item--is-active': currentTabIndex === index }
+            { 'is-active': currentTabIndex === index }
           )
           return (
             <div

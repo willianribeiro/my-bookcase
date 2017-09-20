@@ -21,7 +21,7 @@
     // STATES
     &:hover { color: #fff; }
 
-    &.c-tab-navigator__item--is-active {
+    &.is-active {
       color: #fff;
 
       &::after {
