@@ -17,8 +17,9 @@ body {
 }
 
 body {
+  background-color: #ecf0f1;
+  color: #313131;
   font-family: "Helvetica Neue", "Helvetica", "Roboto", Arial, sans-serif;
-  color: #212121;
 }
 
 
@@ -126,7 +127,7 @@ body {
 .c-bookshelf {
   display: flex;
   flex-wrap: wrap;
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
@@ -144,16 +145,5 @@ body {
     .c-bookshelf .c-book-card:nth-child(odd).c-book-card:last-of-type {
       flex-grow: 0;
       margin-right: auto;
-    }
-  }
-
-  @media screen and (min-width: 900px) {
-    .c-bookshelf .c-book-card {
-      flex-basis: 31%;
-      flex-basis: calc(33% - 32px);
-    }
-
-    .c-bookshelf .c-book-card:nth-child(even).c-book-card:last-of-type {
-      flex-grow: 0;
     }
   }
