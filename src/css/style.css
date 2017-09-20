@@ -123,39 +123,37 @@ body {
 
 
 /* COMPONENT: SHELF */
-.c-shelf {
+.c-bookshelf {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
   max-width: 900px;
   margin: 0 auto;
 }
 
-  .c-shelf .c-book-card {
+  .c-bookshelf .c-book-card {
     flex-basis: 100%;
   }
 
   @media screen and (min-width: 600px) {
-    .c-shelf .c-book-card {
+    .c-bookshelf .c-book-card {
       margin-right: 16px;
       flex-basis: 48%;
       flex-basis: calc(50% - 16px);
     }
 
-    .c-shelf .c-book-card:nth-child(odd).c-book-card:last-of-type {
+    .c-bookshelf .c-book-card:nth-child(odd).c-book-card:last-of-type {
       flex-grow: 0;
       margin-right: auto;
     }
   }
 
   @media screen and (min-width: 900px) {
-    .c-shelf .c-book-card {
+    .c-bookshelf .c-book-card {
       flex-basis: 31%;
       flex-basis: calc(33% - 32px);
     }
 
-    .c-shelf .c-book-card:nth-child(even).c-book-card:last-of-type {
+    .c-bookshelf .c-book-card:nth-child(even).c-book-card:last-of-type {
       flex-grow: 0;
-      margin-right: auto;
     }
   }
