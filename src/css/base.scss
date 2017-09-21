@@ -22,3 +22,9 @@ body {
 ul {
   list-style-type: none;
 }
+
+.c-loading {
+  padding: $SPACING-4;
+  font-size: 32px;
+  text-align: center;
+}
