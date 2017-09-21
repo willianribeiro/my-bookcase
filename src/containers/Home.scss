@@ -2,7 +2,7 @@
   height: 100%;
 
   .pg-home__content {
-    height: calc(100% - 120px);
+    height: calc(100% - #{$HEIGHT-APP-HEADER});
   }
 
   .pg-custom-tabs {
@@ -15,7 +15,7 @@
 
     .c-tab-navigator__inner {
       margin: 0 auto;
-      max-width: 1000px;
+      max-width: $MAX-WIDTH-CONTENT;
     }
   }
 }

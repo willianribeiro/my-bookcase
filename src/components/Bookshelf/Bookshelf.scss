@@ -1,7 +1,7 @@
 .c-bookshelf {
   display: flex;
   flex-wrap: wrap;
-  max-width: 1000px;
+  max-width: $MAX-WIDTH-CONTENT;
   margin: 0 auto;
 
   .c-book-card {
@@ -11,9 +11,9 @@
   // RESPONSIVENESS
   @media screen and (min-width: 600px) {
     .c-book-card {
-      margin-right: 16px;
+      margin-right: $SPACING-2;
       flex-basis: 48%;
-      flex-basis: calc(50% - 16px);
+      flex-basis: calc(50% - #{$SPACING-2});
       flex-grow: 0;
     }
   }

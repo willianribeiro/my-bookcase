@@ -1,11 +1,11 @@
 .c-app-header {
-  height: 120px;
-  background-color: #3f51b5;
-  color: #fff;
+  height: $HEIGHT-APP-HEADER;
+  background-color: $COLOR-PRIMARY;
+  color: $COLOR-WHITE;
 
   .c-app-header__title {
-    padding: 32px;
-    max-width: 1000px;
+    padding: $SPACING-4;
+    max-width: $MAX-WIDTH-CONTENT;
     margin: 0 auto;
     font-size: 50px;
     text-align: center;

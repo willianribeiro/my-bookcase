@@ -1,4 +1,4 @@
-@import
-  'base.scss',
-  '../components/components',
-  '../containers/containers';
+@import 'variables';
+@import 'base';
+@import '../components/components';
+@import  '../containers/containers';
