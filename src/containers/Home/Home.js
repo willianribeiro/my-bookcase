@@ -1,6 +1,6 @@
 import React, {Component } from 'react'
 
-import MockBookApi from '../../api/MockBookApi'
+import BookApi from '../../api/BookApi'
 import { Tabs, Tab } from 'components/Tabs'
 import Bookshelf from 'components/Bookshelf'
 import AppHeader from 'components/AppHeader'
@@ -22,19 +22,19 @@ class Home extends Component {
   }
 
   fetchAlreadyRead = () => {
-    MockBookApi.fetchAlreadyRead()
+    BookApi.fetchAlreadyRead()
       .then(response => this.setState({ alreadyRead: response.data.response }))
       .catch(error => this.handleError(error))
   }
 
   fetchReading = () => {
-    MockBookApi.fetchReading()
+    BookApi.fetchReading()
       .then(response => this.setState({ reading: response.data.response }))
       .catch(error => this.handleError(error))
   }
 
   fetchWantRead = () => {
-    MockBookApi.fetchWantRead()
+    BookApi.fetchWantRead()
       .then(response => this.setState({ wantRead: response.data.response }))
       .catch(error => this.handleError(error))
   }
