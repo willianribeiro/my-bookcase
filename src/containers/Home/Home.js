@@ -48,7 +48,7 @@ class Home extends Component {
 
     return (
       <div className='pg-home'>
-        <AppHeader title={'User\'s Bookshelf'} />
+        <AppHeader title='My Bookshelf' />
 
         <div className='pg-home__content'>
           <Tabs initialTab={1} className='pg-custom-tabs'>
