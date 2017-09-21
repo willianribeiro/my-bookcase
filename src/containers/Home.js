@@ -47,10 +47,10 @@ class Home extends Component {
     const { alreadyRead, reading, wantRead } = this.state
 
     return (
-      <div>
+      <div className='pg-home'>
         <AppHeader title={'User\'s Bookshelf'} />
 
-        <div className='pg-home'>
+        <div className='pg-home__content'>
           <Tabs initialTab={1} className='pg-custom-tabs'>
             <Tab title='Already read'>
               <Bookshelf books={alreadyRead} />

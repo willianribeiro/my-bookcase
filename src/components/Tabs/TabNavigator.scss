@@ -1,9 +1,11 @@
 .c-tab-navigator {
+  height: 60px;
   background-color: #3f51b5;
   color: #c5cae9;
 
   .c-tab-navigator__inner {
     display: flex;
+    height: 100%;
   }
 
   .c-tab-navigator__item {
