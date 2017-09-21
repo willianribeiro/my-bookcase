@@ -1,6 +1,6 @@
 import React, {Component } from 'react'
 
-import MockBookApi from '../api/MockBookApi'
+import MockBookApi from '../../api/MockBookApi'
 import { Tabs, Tab } from 'components/Tabs'
 import Bookshelf from 'components/Bookshelf'
 import AppHeader from 'components/AppHeader'
