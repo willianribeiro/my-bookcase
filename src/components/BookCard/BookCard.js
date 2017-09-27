@@ -4,18 +4,21 @@ import PropTypes from 'prop-types'
 const BookCard = ({
   title,
   author,
-  img
+  img,
+  url
 }) => {
   return (
     <div className='c-book-card'>
       <div className='c-book-card__cover'>
-        <div className='c-book-card__book'>
-          <div className='c-book-card__book-front'>
-            <img src={img} className='c-book-card__img' />
+        <a href={url} target='_blank'>
+          <div className='c-book-card__book'>
+            <div className='c-book-card__book-front'>
+              <img src={img} className='c-book-card__img' />
+            </div>
+            <div className='c-book-card__book-back'></div>
+            <div className='c-book-card__book-side'></div>
           </div>
-          <div className='c-book-card__book-back'></div>
-          <div className='c-book-card__book-side'></div>
-        </div>
+        </a>
       </div>
       <div>
         <div className='c-book-card__title'>
