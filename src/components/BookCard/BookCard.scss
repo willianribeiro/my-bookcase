@@ -1,5 +1,5 @@
 .c-book-card {
-  width: 280px;
+  width: 200px;
   padding: $SPACING-2;
   border-radius: $BORDER-RADIUS;
   background-color: #fff;
@@ -9,8 +9,8 @@
 
   .c-book-card__cover {
     position: relative;
-    width: 200px;
-    height: 300px;
+    width: 140px;
+    height: 210px;
     margin: 0 auto $SPACING-1 auto;
     perspective: 1000px;
   }
