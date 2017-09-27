@@ -1,3 +1,3 @@
-
-- Deploy storybook
+- Make AppHeader small when scroll page
 - Parameterize user
+- Deploy storybook
