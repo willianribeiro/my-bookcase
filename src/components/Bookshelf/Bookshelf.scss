@@ -1,20 +1,12 @@
 .c-bookshelf {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   max-width: $MAX-WIDTH-CONTENT;
   margin: 0 auto;
 
   .c-book-card {
-    flex-basis: 100%;
-  }
-
-  // RESPONSIVENESS
-  @media screen and (min-width: 600px) {
-    .c-book-card {
-      margin-right: $SPACING-2;
-      flex-basis: 48%;
-      flex-basis: calc(50% - #{$SPACING-2});
-      flex-grow: 0;
-    }
+    margin-right: $SPACING-4;
+    margin-top: $SPACING-4;
   }
 }
