@@ -2,7 +2,7 @@
   height: 100%;
 
   .pg-home__content {
-    height: calc(100% - #{$HEIGHT-APP-HEADER});
+    height: calc(100% - #{$HEIGHT-APP-HEADER-MOBILE});
   }
 
   .pg-custom-tabs {
@@ -16,6 +16,12 @@
     .c-tab-navigator__inner {
       margin: 0 auto;
       max-width: $MAX-WIDTH-CONTENT;
+    }
+  }
+
+  @media screen and (min-width: 480px) {
+    .pg-home__content {
+      height: calc(100% - #{$HEIGHT-APP-HEADER-DESKTOP});
     }
   }
 }

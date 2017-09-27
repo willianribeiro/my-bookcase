@@ -1,5 +1,5 @@
 .c-app-header {
-  height: $HEIGHT-APP-HEADER;
+  height: $HEIGHT-APP-HEADER-MOBILE;
   background-color: $COLOR-PRIMARY;
   color: $COLOR-WHITE;
 
@@ -7,8 +7,16 @@
     padding: $SPACING-4;
     max-width: $MAX-WIDTH-CONTENT;
     margin: 0 auto;
-    font-size: 50px;
+    font-size: 30px;
     text-align: center;
+  }
+
+  @media screen and (min-width: 480px) {
+    height: $HEIGHT-APP-HEADER-DESKTOP;
+
+    .c-app-header__title {
+      font-size: 50px;
+    }
   }
 }
 
