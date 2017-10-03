@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import BookApi from '../../api/BookApi'
+import BookApi from 'services/BookApi'
 import { Tabs } from 'components/Tabs'
 import AppHeader from 'components/AppHeader'
 import GenericTab from './GenericTab'
