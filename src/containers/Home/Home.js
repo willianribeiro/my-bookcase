@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
 
 import BookApi from '../../api/BookApi'
-import { Tabs, Tab } from 'components/Tabs'
+import { Tabs } from 'components/Tabs'
 import AppHeader from 'components/AppHeader'
-import Bookshelf from 'components/Bookshelf'
-import Paginator from 'components/Paginator'
+import GenericTab from './GenericTab'
 
 class Home extends Component {
   constructor () {
@@ -111,45 +110,24 @@ class Home extends Component {
 
         <div className='pg-home__content'>
           <Tabs initialTab={1} className='pg-custom-tabs'>
-            <Tab title='Already read'>
-              {!alreadyReadInitialLoad &&
-                <div>
-                  <Bookshelf books={alreadyRead.books} />
-                  <Paginator
-                    fetch={this.fetchAlreadyRead}
-                    pagination={alreadyRead.pagination}
-                    loading={alreadyRead.loading}
-                  />
-                </div>
-              }
-              {alreadyReadInitialLoad && <div className='c-loading'>Loading...</div>}
-            </Tab>
-            <Tab title='Reading'>
-              {!readingInitialLoad &&
-                <div>
-                  <Bookshelf books={reading.books} />
-                  <Paginator
-                    fetch={this.fetchReading}
-                    pagination={reading.pagination}
-                    loading={reading.loading}
-                  />
-                </div>
-              }
-              {readingInitialLoad && <div className='c-loading'>Loading...</div>}
-            </Tab>
-            <Tab title='Want to read'>
-              {!wantReadInitialLoad &&
-                <div>
-                  <Bookshelf books={wantRead.books} />
-                  <Paginator
-                    fetch={this.fetchWantRead}
-                    pagination={wantRead.pagination}
-                    loading={reading.loading}
-                  />
-                </div>
-              }
-              {wantReadInitialLoad && <div className='c-loading'>Loading...</div>}
-            </Tab>
+            <GenericTab
+              title={'Already read'}
+              properties={alreadyRead}
+              fetch={this.fetchAlreadyRead}
+              initialLoad={alreadyReadInitialLoad}
+            />
+            <GenericTab
+              title={'Reading'}
+              properties={reading}
+              fetch={this.fetchReading}
+              initialLoad={readingInitialLoad}
+            />
+            <GenericTab
+              title={'Want to read'}
+              properties={wantRead}
+              fetch={this.fetchWantRead}
+              initialLoad={wantReadInitialLoad}
+            />
           </Tabs>
         </div>
       </div>
