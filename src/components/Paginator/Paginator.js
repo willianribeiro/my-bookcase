@@ -31,7 +31,7 @@ const Paginator = ({
         </button>
       }
       {!pagination.next_page && pagination.page > 1 &&
-        <div>All itens were loaded</div>
+        <div>All items were loaded</div>
       }
     </div>
   )
