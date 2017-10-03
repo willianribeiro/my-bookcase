@@ -6,7 +6,15 @@
   margin: 0 auto;
 
   .c-book-card {
-    margin-right: $SPACING-4;
+    margin-left: $SPACING-1;
+    margin-right: $SPACING-1;
     margin-top: $SPACING-4;
+  }
+
+  @media screen and (min-width: 600px) {
+    .c-book-card {
+      margin-right: $SPACING-4;
+      margin-left: 0;
+    }
   }
 }
