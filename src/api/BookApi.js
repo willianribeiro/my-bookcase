@@ -32,7 +32,7 @@ function fetchReading (page) {
 }
 
 // private functions
-function _mountUrl(shelfId, page) {
+function _mountUrl (shelfId, page) {
   return `${proxy}/${baseUrl}/${userId}/shelf_id:${shelfId}/page:${page}/limit:${limit}/`
 }
 
