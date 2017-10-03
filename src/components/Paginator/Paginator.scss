@@ -1,0 +1,19 @@
+.c-paginator {
+  max-width: $MAX-WIDTH-CONTENT;
+  padding: $SPACING-2;
+  margin: $SPACING-6 auto 0 auto;
+  text-align: center;
+
+  .c-paginator__button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    padding: $SPACING-2;
+    border-radius: $BORDER-RADIUS;
+    border: 1px solid $COLOR-BORDER;
+    background-color: $COLOR-WHITE;
+    font-size: 1em;
+    cursor: pointer;
+  }
+}
