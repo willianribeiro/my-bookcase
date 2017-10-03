@@ -1,5 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from 'react'
+import PropTypes from 'prop-types'
 
 import { Tab } from 'components/Tabs'
 import Bookshelf from 'components/Bookshelf'
@@ -25,14 +25,14 @@ const GenericTab = ({
       }
       {initialLoad && <div className='c-loading'>Loading...</div>}
     </Tab>
-  );
-};
+  )
+}
 
 GenericTab.propTypes = {
   title: PropTypes.string,
   properties: PropTypes.object,
   fetch: PropTypes.func,
-  initialLoad: PropTypes.bool,
-};
+  initialLoad: PropTypes.bool
+}
 
-export default GenericTab;
+export default GenericTab
