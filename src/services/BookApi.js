@@ -1,9 +1,9 @@
 import axios from 'axios'
 
 const api = {
-  fetchWantRead: fetchWantRead,
   fetchAlreadyRead: fetchAlreadyRead,
-  fetchReading: fetchReading
+  fetchReading: fetchReading,
+  fetchWantRead: fetchWantRead
 }
 
 // variables
@@ -13,12 +13,6 @@ const userId = 4355417
 const limit = 20
 
 // public functions
-function fetchWantRead (page) {
-  const shelfId = 0
-  const wantRead = _mountUrl(shelfId, page)
-  return axios.get(wantRead)
-}
-
 function fetchAlreadyRead (page) {
   const shelfId = 1
   const alreadyRead = _mountUrl(shelfId, page)
@@ -29,6 +23,12 @@ function fetchReading (page) {
   const shelfId = 2
   const reading = _mountUrl(shelfId, page)
   return axios.get(reading)
+}
+
+function fetchWantRead (page) {
+  const shelfId = 3
+  const wantRead = _mountUrl(shelfId, page)
+  return axios.get(wantRead)
 }
 
 // private functions
