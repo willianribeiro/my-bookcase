@@ -11,6 +11,12 @@
     text-align: center;
   }
 
+  // STATE
+  &.is-hidden {
+    visibility: hidden;
+    height: 60px;
+  }
+
   // RESPONSIVENESS
   @media screen and (min-width: 480px) {
     height: $HEIGHT-APP-HEADER-DESKTOP;

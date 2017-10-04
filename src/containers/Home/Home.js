@@ -49,11 +49,11 @@ class Home extends Component {
   }
 
   _shouldFixHeader = e => (
-    e.target.scrollTop >= this.contentOffsetTop && !this.state.fixedHeader
+    document.body.scrollTop >= this.contentOffsetTop && !this.state.fixedHeader
   )
 
   _shouldUnfixHeader = e => (
-    e.target.scrollTop < this.contentOffsetTop && this.state.fixedHeader
+    document.body.scrollTop < this.contentOffsetTop && this.state.fixedHeader
   )
 
   // lifecycle functions
@@ -63,8 +63,13 @@ class Home extends Component {
     this.fetchWantRead(1)
   }
 
-  componentDidMount() {
+  componentDidMount () {
     this.contentOffsetTop = this.contentContainer.offsetTop
+    window.addEventListener('scroll', this._handleScroll)
+  }
+
+  componentWillUnmount () {
+      window.removeEventListener('scroll', this._handleScroll)
   }
 
   // public functions
@@ -139,8 +144,8 @@ class Home extends Component {
     )
 
     return (
-      <div className={classNames} onScroll={e => this._handleScroll(e)}>
-        <AppHeader title='My Bookshelf' />
+      <div className={classNames}>
+        <AppHeader title='My Bookshelf' hide={fixedHeader} />
 
         <div className='pg-home__content' ref={el => this.contentContainer = el}>
           <Tabs initialTab={1} className='pg-custom-tabs'>
