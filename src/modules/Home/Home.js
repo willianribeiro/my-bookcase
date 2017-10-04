@@ -28,7 +28,7 @@ class Home extends Component {
       alreadyReadInitialLoad: true,
       readingInitialLoad: true,
       wantReadInitialLoad: true,
-      fixedHeader: false,
+      fixedHeader: false
     }
 
     this.user = null

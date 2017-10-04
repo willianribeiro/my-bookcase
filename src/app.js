@@ -1,3 +1,4 @@
+/* eslint-env browser */
 import React, { Component } from 'react'
 
 import Home from './modules/Home/Home'
