@@ -28,9 +28,10 @@ class Home extends Component {
       alreadyReadInitialLoad: true,
       readingInitialLoad: true,
       wantReadInitialLoad: true,
-      fixedHeader: false
+      fixedHeader: false,
     }
 
+    this.user = null
     this.contentContainer = null
     this.contentOffsetTop = null
   }
@@ -62,9 +63,10 @@ class Home extends Component {
     const page = 1
 
     if (user) {
-      this.fetchAlreadyRead(user, page)
-      this.fetchReading(user, page)
-      this.fetchWantRead(user, page)
+      this.user = user
+      this.fetchAlreadyRead(page)
+      this.fetchReading(page)
+      this.fetchWantRead(page)
     }
   }
 
@@ -78,10 +80,10 @@ class Home extends Component {
   }
 
   // public functions
-  fetchAlreadyRead = (user, page) => {
+  fetchAlreadyRead = page => {
     this.setState({ alreadyRead: { ...this.state.alreadyRead, loading: true } })
 
-    BookApi.fetchAlreadyRead(user, page)
+    BookApi.fetchAlreadyRead(this.user, page)
       .then(response => {
         const books = this.state.alreadyRead.books
         const booksUpdated = books.concat(response.data.response)
@@ -96,10 +98,10 @@ class Home extends Component {
       .catch(error => this._handleError(error))
   }
 
-  fetchReading = (user, page) => {
+  fetchReading = page => {
     this.setState({ reading: { ...this.state.reading, loading: true } })
 
-    BookApi.fetchReading(user, page)
+    BookApi.fetchReading(this.user, page)
       .then(response => {
         const books = this.state.reading.books
         const booksUpdated = books.concat(response.data.response)
@@ -114,10 +116,10 @@ class Home extends Component {
       .catch(error => this._handleError(error))
   }
 
-  fetchWantRead = (user, page) => {
+  fetchWantRead = page => {
     this.setState({ wantRead: { ...this.state.wantRead, loading: true } })
 
-    BookApi.fetchWantRead(user, page)
+    BookApi.fetchWantRead(this.user, page)
       .then(response => {
         const books = this.state.wantRead.books
         const booksUpdated = books.concat(response.data.response)
