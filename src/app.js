@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Home from './containers/Home/Home'
+import Home from './modules/Home/Home'
 
 const App = () => <Home />
 
