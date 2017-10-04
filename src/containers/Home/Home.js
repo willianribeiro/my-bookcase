@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import classnames from 'classnames'
 
 import BookApi from 'services/BookApi'
 import { Tabs } from 'components/Tabs'
@@ -26,16 +27,47 @@ class Home extends Component {
       },
       alreadyReadInitialLoad: true,
       readingInitialLoad: true,
-      wantReadInitialLoad: true
+      wantReadInitialLoad: true,
+      fixedHeader: false
+    }
+
+    this.contentContainer = null
+    this.contentOffsetTop = null
+  }
+
+  // private functions
+  _handleError = error => {
+    console.log(error)
+  }
+
+  _handleScroll = e => {
+    if (this._shouldFixHeader(e)) {
+      this.setState({ fixedHeader: true })
+    } else if (this._shouldUnfixHeader(e)) {
+      this.setState({ fixedHeader: false })
     }
   }
 
+  _shouldFixHeader = e => (
+    e.target.scrollTop >= this.contentOffsetTop && !this.state.fixedHeader
+  )
+
+  _shouldUnfixHeader = e => (
+    e.target.scrollTop < this.contentOffsetTop && this.state.fixedHeader
+  )
+
+  // lifecycle functions
   componentWillMount () {
     this.fetchAlreadyRead(1)
     this.fetchReading(1)
     this.fetchWantRead(1)
   }
 
+  componentDidMount() {
+    this.contentOffsetTop = this.contentContainer.offsetTop
+  }
+
+  // public functions
   fetchAlreadyRead = page => {
     this.setState({ alreadyRead: { ...this.state.alreadyRead, loading: true } })
 
@@ -51,7 +83,7 @@ class Home extends Component {
         this.setState({ alreadyRead: alreadyRead })
         this.setState({ alreadyReadInitialLoad: false })
       })
-      .catch(error => this.handleError(error))
+      .catch(error => this._handleError(error))
   }
 
   fetchReading = page => {
@@ -69,7 +101,7 @@ class Home extends Component {
         this.setState({ reading: reading })
         this.setState({ readingInitialLoad: false })
       })
-      .catch(error => this.handleError(error))
+      .catch(error => this._handleError(error))
   }
 
   fetchWantRead = page => {
@@ -87,11 +119,7 @@ class Home extends Component {
         this.setState({ wantRead: wantRead })
         this.setState({ wantReadInitialLoad: false })
       })
-      .catch(error => this.handleError(error))
-  }
-
-  handleError = (error) => {
-    console.log(error)
+      .catch(error => this._handleError(error))
   }
 
   render () {
@@ -101,14 +129,20 @@ class Home extends Component {
       wantRead,
       alreadyReadInitialLoad,
       readingInitialLoad,
-      wantReadInitialLoad
+      wantReadInitialLoad,
+      fixedHeader
     } = this.state
 
+    const classNames = classnames(
+      'pg-home',
+      { 'is-header-fixed': fixedHeader }
+    )
+
     return (
-      <div className='pg-home'>
+      <div className={classNames} onScroll={e => this._handleScroll(e)}>
         <AppHeader title='My Bookshelf' />
 
-        <div className='pg-home__content'>
+        <div className='pg-home__content' ref={el => this.contentContainer = el}>
           <Tabs initialTab={1} className='pg-custom-tabs'>
             <GenericTab
               title={'Already read'}
