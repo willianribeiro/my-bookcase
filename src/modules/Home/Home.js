@@ -58,9 +58,14 @@ class Home extends Component {
 
   // lifecycle functions
   componentWillMount () {
-    this.fetchAlreadyRead(1)
-    this.fetchReading(1)
-    this.fetchWantRead(1)
+    const user = this.props.params.get('user')
+    const page = 1
+
+    if (user) {
+      this.fetchAlreadyRead(user, page)
+      this.fetchReading(user, page)
+      this.fetchWantRead(user, page)
+    }
   }
 
   componentDidMount () {
@@ -73,10 +78,10 @@ class Home extends Component {
   }
 
   // public functions
-  fetchAlreadyRead = page => {
+  fetchAlreadyRead = (user, page) => {
     this.setState({ alreadyRead: { ...this.state.alreadyRead, loading: true } })
 
-    BookApi.fetchAlreadyRead(page)
+    BookApi.fetchAlreadyRead(user, page)
       .then(response => {
         const books = this.state.alreadyRead.books
         const booksUpdated = books.concat(response.data.response)
@@ -91,10 +96,10 @@ class Home extends Component {
       .catch(error => this._handleError(error))
   }
 
-  fetchReading = page => {
+  fetchReading = (user, page) => {
     this.setState({ reading: { ...this.state.reading, loading: true } })
 
-    BookApi.fetchReading(page)
+    BookApi.fetchReading(user, page)
       .then(response => {
         const books = this.state.reading.books
         const booksUpdated = books.concat(response.data.response)
@@ -109,10 +114,10 @@ class Home extends Component {
       .catch(error => this._handleError(error))
   }
 
-  fetchWantRead = page => {
+  fetchWantRead = (user, page) => {
     this.setState({ wantRead: { ...this.state.wantRead, loading: true } })
 
-    BookApi.fetchWantRead(page)
+    BookApi.fetchWantRead(user, page)
       .then(response => {
         const books = this.state.wantRead.books
         const booksUpdated = books.concat(response.data.response)
