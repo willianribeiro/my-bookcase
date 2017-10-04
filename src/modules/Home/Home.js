@@ -69,7 +69,7 @@ class Home extends Component {
   }
 
   componentWillUnmount () {
-      window.removeEventListener('scroll', this._handleScroll)
+    window.removeEventListener('scroll', this._handleScroll)
   }
 
   // public functions
@@ -147,7 +147,7 @@ class Home extends Component {
       <div className={classNames}>
         <AppHeader title='My Bookshelf' hide={fixedHeader} />
 
-        <div className='pg-home__content' ref={el => this.contentContainer = el}>
+        <div className='pg-home__content' ref={el => { this.contentContainer = el }}>
           <Tabs initialTab={1} className='pg-custom-tabs'>
             <GenericTab
               title={'Already read'}
