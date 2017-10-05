@@ -91,9 +91,11 @@ class Home extends Component {
       .then(response => {
         const books = this.state.alreadyRead.books
         const booksUpdated = books.concat(response.data.response)
+        const pagination = response.data.paging || {}
+
         const alreadyRead = {
           books: booksUpdated,
-          pagination: response.data.paging,
+          pagination: pagination,
           loading: false
         }
         this.setState({ alreadyRead: alreadyRead })
@@ -109,9 +111,11 @@ class Home extends Component {
       .then(response => {
         const books = this.state.reading.books
         const booksUpdated = books.concat(response.data.response)
+        const pagination = response.data.paging || {}
+
         const reading = {
           books: booksUpdated,
-          pagination: response.data.paging,
+          pagination: pagination,
           loading: false
         }
         this.setState({ reading: reading })
@@ -127,9 +131,11 @@ class Home extends Component {
       .then(response => {
         const books = this.state.wantRead.books
         const booksUpdated = books.concat(response.data.response)
+        const pagination = response.data.paging || {}
+
         const wantRead = {
           books: booksUpdated,
-          pagination: response.data.paging,
+          pagination: pagination,
           loading: false
         }
         this.setState({ wantRead: wantRead })
