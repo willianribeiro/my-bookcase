@@ -177,6 +177,18 @@ class Home extends Component {
       { 'is-header-fixed': fixedHeader }
     )
 
+    const alreadyReadTitle = alreadyRead.pagination
+      ? `Already read (${alreadyRead.pagination.total || 0})`
+      : ''
+
+      const readingTitle = reading.pagination
+      ? `Reading (${reading.pagination.total || 0})`
+      : ''
+
+      const wantReadTitle = wantRead.pagination
+      ? `Want to read (${wantRead.pagination.total || 0})`
+      : ''
+
     return (
       <div className={classNames}>
         <AppHeader title='My Bookshelf' hide={fixedHeader} />
@@ -185,19 +197,19 @@ class Home extends Component {
           {this.user &&
             <Tabs initialTab={1} className='pg-custom-tabs'>
               <GenericTab
-                title={'Already read'}
+                title={alreadyReadTitle}
                 properties={alreadyRead}
                 fetch={this.fetchAlreadyRead}
                 initialLoad={alreadyReadInitialLoad}
               />
               <GenericTab
-                title={'Reading'}
+                title={readingTitle}
                 properties={reading}
                 fetch={this.fetchReading}
                 initialLoad={readingInitialLoad}
               />
               <GenericTab
-                title={'Want to read'}
+                title={wantReadTitle}
                 properties={wantRead}
                 fetch={this.fetchWantRead}
                 initialLoad={wantReadInitialLoad}
