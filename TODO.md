@@ -1,2 +1,3 @@
-- Parameterize user
+- Create empty case component
+- Create placeholder bookshelf
 - Deploy storybook
