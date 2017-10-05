@@ -13,17 +13,20 @@ class Home extends Component {
       alreadyRead: {
         books: [],
         pagination: {},
-        loading: false
+        loading: false,
+        error: ''
       },
       reading: {
         books: [],
         pagination: {},
-        loading: false
+        loading: false,
+        error: ''
       },
       wantRead: {
         books: [],
         pagination: {},
-        loading: false
+        loading: false,
+        error: ''
       },
       alreadyReadInitialLoad: true,
       readingInitialLoad: true,
@@ -37,10 +40,6 @@ class Home extends Component {
   }
 
   // private functions
-  _handleError = error => {
-    console.log(error)
-  }
-
   _handleScroll = e => {
     if (this._shouldFixHeader(e)) {
       this.setState({ fixedHeader: true })
@@ -101,7 +100,13 @@ class Home extends Component {
         this.setState({ alreadyRead: alreadyRead })
         this.setState({ alreadyReadInitialLoad: false })
       })
-      .catch(error => this._handleError(error))
+      .catch(error => {
+        this.setState({ alreadyReadInitialLoad: false })
+        this.setState({
+          alreadyRead: { ...this.state.alreadyRead, loading: false, error: error }
+        })
+        console.error(error)
+      })
   }
 
   fetchReading = page => {
@@ -121,7 +126,13 @@ class Home extends Component {
         this.setState({ reading: reading })
         this.setState({ readingInitialLoad: false })
       })
-      .catch(error => this._handleError(error))
+      .catch(error => {
+        this.setState({ readingInitialLoad: false })
+        this.setState({
+          reading: { ...this.state.reading, loading: false, error: error }
+        })
+        console.error(error)
+      })
   }
 
   fetchWantRead = page => {
@@ -141,7 +152,13 @@ class Home extends Component {
         this.setState({ wantRead: wantRead })
         this.setState({ wantReadInitialLoad: false })
       })
-      .catch(error => this._handleError(error))
+      .catch(error => {
+        this.setState({ wantReadInitialLoad: false })
+        this.setState({
+          wantRead: { ...this.state.wantRead, loading: false, error: error }
+        })
+        console.error(error)
+      })
   }
 
   render () {

@@ -23,9 +23,14 @@ const GenericTab = ({
           />
         </div>
       }
-      {!initialLoad && properties.books && properties.books.length === 0 &&
+      {!initialLoad && properties.books && properties.books.length === 0 && !properties.error &&
         <div style={{textAlign: 'center', padding: '32px'}}>
           There is no books here ¯\_(ツ)_/¯
+        </div>
+      }
+      {!initialLoad && properties.error &&
+        <div style={{textAlign: 'center', padding: '32px'}}>
+          Sorry, it was not possible to get this book list. Try again later |:
         </div>
       }
       {initialLoad && <div className='c-loading'>Loading...</div>}
