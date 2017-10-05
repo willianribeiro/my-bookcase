@@ -35,4 +35,11 @@ GenericTab.propTypes = {
   initialLoad: PropTypes.bool
 }
 
+GenericTab.defaultProps = {
+  title: '',
+  properties: {},
+  fetch: () => {},
+  initialLoad: false
+}
+
 export default GenericTab
