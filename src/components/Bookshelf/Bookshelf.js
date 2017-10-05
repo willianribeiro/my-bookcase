@@ -18,16 +18,7 @@ const Bookshelf = ({
     />
   ))
 
-  return (
-    <div className='c-bookshelf'>
-      {bookCards.length > 0 && bookCards}
-      {bookCards.length === 0 &&
-        <div style={{textAlign: 'center', padding: '32px'}}>
-          There is no books here ¯\_(ツ)_/¯
-        </div>
-      }
-    </div>
-  )
+  return <div className='c-bookshelf'>{bookCards}</div>
 }
 
 Bookshelf.propTypes = {

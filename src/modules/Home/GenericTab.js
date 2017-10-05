@@ -13,7 +13,7 @@ const GenericTab = ({
 }) => {
   return (
     <Tab title={title}>
-      {!initialLoad &&
+      {!initialLoad && properties.books && properties.books.length > 0 &&
         <div>
           <Bookshelf books={properties.books} />
           <Paginator
@@ -21,6 +21,11 @@ const GenericTab = ({
             pagination={properties.pagination}
             loading={properties.loading}
           />
+        </div>
+      }
+      {!initialLoad && properties.books && properties.books.length === 0 &&
+        <div style={{textAlign: 'center', padding: '32px'}}>
+          There is no books here ¯\_(ツ)_/¯
         </div>
       }
       {initialLoad && <div className='c-loading'>Loading...</div>}
