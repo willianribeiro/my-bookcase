@@ -67,6 +67,10 @@ class Home extends Component {
       this.fetchAlreadyRead(page)
       this.fetchReading(page)
       this.fetchWantRead(page)
+    } else {
+      this.setState({ alreadyReadInitialLoad: false })
+      this.setState({ readingInitialLoad: false })
+      this.setState({ wantReadInitialLoad: false })
     }
   }
 
@@ -155,26 +159,34 @@ class Home extends Component {
         <AppHeader title='My Bookshelf' hide={fixedHeader} />
 
         <div className='pg-home__content' ref={el => { this.contentContainer = el }}>
-          <Tabs initialTab={1} className='pg-custom-tabs'>
-            <GenericTab
-              title={'Already read'}
-              properties={alreadyRead}
-              fetch={this.fetchAlreadyRead}
-              initialLoad={alreadyReadInitialLoad}
-            />
-            <GenericTab
-              title={'Reading'}
-              properties={reading}
-              fetch={this.fetchReading}
-              initialLoad={readingInitialLoad}
-            />
-            <GenericTab
-              title={'Want to read'}
-              properties={wantRead}
-              fetch={this.fetchWantRead}
-              initialLoad={wantReadInitialLoad}
-            />
-          </Tabs>
+          {this.user &&
+            <Tabs initialTab={1} className='pg-custom-tabs'>
+              <GenericTab
+                title={'Already read'}
+                properties={alreadyRead}
+                fetch={this.fetchAlreadyRead}
+                initialLoad={alreadyReadInitialLoad}
+              />
+              <GenericTab
+                title={'Reading'}
+                properties={reading}
+                fetch={this.fetchReading}
+                initialLoad={readingInitialLoad}
+              />
+              <GenericTab
+                title={'Want to read'}
+                properties={wantRead}
+                fetch={this.fetchWantRead}
+                initialLoad={wantReadInitialLoad}
+              />
+            </Tabs>
+          }
+          {!this.user &&
+            <div style={{textAlign: 'center', padding: '32px'}}>
+              You need to provide an <strong>user id</strong> as a parameter on URL
+              (Eg.: <strong>http://url.com.br/?user=42</strong>).
+            </div>
+          }
         </div>
       </div>
     )
