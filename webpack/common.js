@@ -21,7 +21,7 @@ module.exports = {
   },
 
   htmlPluginConfig: {
-    title: 'Skoob Bookshelf',
+    title: 'My Bookcase',
     template: join(paths.src, 'html', 'template.html')
   },
 
