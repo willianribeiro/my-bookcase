@@ -59,7 +59,7 @@ class Home extends Component {
 
     return (
       <div className={classNames}>
-        <AppHeader title='My Bookshelf' hide={fixedHeader} />
+        <AppHeader title='My Bookcase' hide={fixedHeader} />
 
         <div className='pg-home__content' ref={el => { this.contentContainer = el }}>
           {user && <TabsWrapper user={user} />}
