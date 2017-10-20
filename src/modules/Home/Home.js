@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import classnames from 'classnames'
 
 import AppHeader from 'components/AppHeader'
+import AppFooter from 'components/AppFooter'
 import AppTutorial from 'components/AppTutorial'
 import TabsWrapper from './TabsWrapper'
 
@@ -65,6 +66,8 @@ class Home extends Component {
           {user && <TabsWrapper user={user} />}
           {!user && <AppTutorial />}
         </div>
+
+        <AppFooter />
       </div>
     )
   }
