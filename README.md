@@ -1,7 +1,7 @@
 # My Bookcase
 
 **Uma prateleira virtual para listar seus livros cadastrados no [Skoob](http://www.skoob.com.br).**
-
+![screenshot](https://user-images.githubusercontent.com/16687822/32206129-b8dca93c-bdc9-11e7-88d8-328ce72866f8.png)
 A plataforma Skoob permite você manter um registro dos livros que você: já leu, está lendo ou deseja ler. Porém, isso só fica disponível para quem é cadastrado na ferramenta.
 
 O My Bookcase permite que esses livros sejam compartilhados publicamente (-;

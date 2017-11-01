@@ -1,6 +1,6 @@
 # My Bookcase
 **A virtual bookshelf to list your books registered at [Skoob](http://www.skoob.com.br).**
-
+![screenshot](https://user-images.githubusercontent.com/16687822/32206129-b8dca93c-bdc9-11e7-88d8-328ce72866f8.png)
 Skoob platform enables You keep a log of books that: You have read, You are reading or you want to read. However, it is only available for whom is signed up to the website.
 
 My Bookcase enables share that books publicly (-;
